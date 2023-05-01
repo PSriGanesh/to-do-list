@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="main.js" defer></script>
+    <div id="sidebar">
+        <div id="heading">Tasks</div>
+        <div class="side-btn">New Project</div>
+        <div class="side-btn">This Week</div>
+        <hr />
+        <div id="projects"></div>
+    </div>
+    <div id="content">
+
+    </div>
+    <div class="overlay"></div>
+    <form class="task-form">
+        <h3 style="text-align: center;margin-bottom: 40px;">New Task</h3>
+        <div class="input-container">
+            <input id="tname">
+            <label for="tname">Task name</label>
+        </div>
+        <div class="input-container">
+            <input name="date" id="tdate" type="text" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'">
+            <label for="tdate">Due Date</label>
+        </div>
+        <button type="button" onclick="addTask()" class="stask">Submit</button>
+    </form>
+    <form class="project-form">
+        <h3 style="text-align: center;margin-bottom: 40px;">New Project</h3>
+        <div class="input-container">
+            <input id="pname">
+            <label for="pname">Project name</label>
+        </div>
+        <button type="button" onclick="addProject()" class="stask">Submit</button>
+    </form>
+</body> 
+</html>
