@@ -153,7 +153,7 @@ function addTask(){
 }
 
 function initialize(){
-    if(JSON.parse(localStorage.projectArray).length!=0 && localStorage.projectArray!=null ){
+    if(localStorage.length!=0 && localStorage.projectArray.length>2 ){
         projarr = JSON.parse(localStorage.projectArray)
         updateProjects();
         highlight(0);
