@@ -1,0 +1,238 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #1f252f;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    overflow-x: hidden;
+    grid-template-columns: 230px 1fr;
+}
+.task-form {
+    background-color: #272d3b;
+    transform: scale(1);
+    z-index: 2;
+    color: white;
+    font-family: 'Helvetica';
+    position: fixed;
+    border-radius: 20px;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 250px;
+    display: none;
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+    margin-left: -150px;
+    margin-top: -200px;
+    animation: zoom-out 0.1s ease-in-out 1;
+    transition: all 0.2s;
+}
+.task-form.active {
+    display: flex;
+}
+.project-form {
+    background-color: #272d3b;
+    transform: scale(1);
+    z-index: 2;
+    color: white;
+    font-family: 'Helvetica';
+    position: fixed;
+    border-radius: 20px;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 200px;
+    display: none;
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+    margin-left: -150px;
+    margin-top: -175px;
+    animation: zoom-out 0.1s ease-in-out 1;
+    transition: all 0.2s;
+}
+.project-form.active {
+    display: flex;
+}
+@keyframes zoom-out {
+    0% {
+        opacity: 0;
+        transform: scale(1.5);
+    }
+    100% {
+        opacity: 100;
+        transform: scale(1);
+    }
+}
+.input-container {
+    width: 90%;
+    margin-bottom: 50px;
+    position: relative;
+}
+.input-container label {
+    display: block;
+    position: absolute;
+    top: -5px;
+    left: 10px;
+    transition: all 0.3s;
+}
+.input-container label.valid {
+    top: -30px;
+    left: 0px;
+}
+.stask {
+    background-color: white;
+    color: black;
+    width: 150px;
+    font-size: 1.2em;
+    font-family: Helvetica;
+    transition: all 0.3s;
+}
+.stask:hover {
+    background-color: #fb0016;
+    color: white;
+}
+.input-container input {
+    display: block;
+    color: white;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid white;
+    width: 100%;
+}
+.input-container input:focus {
+    outline: none;
+    border-bottom: 2px solid #fb0016;
+}
+.input-container input:focus ~ label {
+    top: -30px;
+    left: 0px;
+}
+
+::-webkit-calendar-picker-indicator {
+    background-color: #fb0016;
+    transform: scale(1.1);
+}
+.overlay {
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    display: none;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+.side-btn {
+    padding: 10px;
+    position: relative;
+    font-family: Helvetica;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+.side-btn:hover {
+    background-color: #303d51;
+}
+.side-btn.active {
+    background-color: #fb0016;
+}
+hr {
+    width: 90%;
+    border-width: 0px;
+    height: 2px;
+    background-color: white;
+    border-radius: 1px;
+}
+#sidebar {
+    padding: 10px;
+    background-color: #272d3b;
+    color: white;
+    grid-column: 1/2;
+    display: flex;
+    flex-direction: column;
+}
+#content {
+    overflow-y: hidden;
+    overflow-x: hidden;
+    background-color: #1b202a;
+    position: relative;
+    display: grid;
+    padding: 13px 30px 10px 30px;
+    grid-row-gap: 43px;
+    grid-template-rows: 40px 32px 1fr;
+}
+.pheading {
+    font-family: helvetica;
+    margin-bottom: 20px;
+    color: white;
+    
+}
+.fadeInUp {
+    opacity: 0;
+    animation-name: fadeInUp;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+#heading {
+    font-size: 4em;
+    font-family: helvetica;
+    margin-bottom: 20px;
+}
+.addTask {
+    width: max-content;
+    border-radius: 10px;
+    background-color: #fb0016;
+    font-family: helvetica;
+    color: white;
+    border: none;
+}
+
+.task-row {
+    background-color: #303d51;
+    color: white;
+    padding: 10px;
+    display: flex;
+    font-family: helvetica;
+    border-radius: 25px;
+    padding: 0px 23px;
+    align-items: center;
+    gap: 15px;
+}
+.task-container {
+    display: grid;
+    padding: 20px;
+    grid-row-gap: 10px;
+    background-color: #1b202a;
+    grid-auto-rows: 60px;
+    height: 100%;
+}
+
+@keyframes fadeInUp {
+    from {
+      transform: translate3d(-40px, 0, 0);
+    }
+    to {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+    }
+  }
+.pUnderline {
+    width: 0px;
+    animation-name: lineDraw;
+    animation-duration: 0.3s;
+    position: absolute;
+    top: 70px;
+    left: 30px;
+    animation-fill-mode: forwards;
+    animation-delay: 0.2s;
+    align-self: flex-start;
+}
+
+@keyframes lineDraw {
+    100% {
+        width: 90%;
+    }
+}
